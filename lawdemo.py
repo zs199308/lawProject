@@ -15,24 +15,6 @@ class Rule(object):
         self.listElem = listElem
         self.logicRelation = logicRelation
 
-'''                
-class Matter(object):
-        states=['solid', 'liquid', 'gas', 'plasma']
-        
-        def __init__(self):
-                self.machine = Machine(model=self, states=Matter.states, initial='solid')
-                
-                self.machine.add_transition('heat', 'solid', 'gas', conditions='is_flammable')
-                self.machine.add_transition('heat2', 'solid', 'liquid', conditions=['is_really_hot'])
-                
-                
-        def is_flammable(self): return False
-        def is_really_hot(self): return True
-    
-#Test
-test = Matter()
-print test.heat()
-'''
 class Matter(object):
     states = []
     def __init__(self):
@@ -43,9 +25,6 @@ class Matter(object):
         
 graph = Matter()
                 
-#elem = Element('其他亲属不予追究', 5);
-#dict = {'http://classiclaw.com/resource/FACTOR-ac782c466dc77aeee96a6dec2c7fb7bd':elem}
-#print dict['http://classiclaw.com/resource/FACTOR-ac782c466dc77aeee96a6dec2c7fb7bd'].elemPrio
 file = open("factor.ttl")
 states = []
 while 1:
@@ -67,9 +46,6 @@ while 1:
     if match:
         elemPrio =match.group(1)
             
-#for i in states:
-        #print i.elemName
-        
 file = open("rule.ttl")
 while 1:
     line = file.readline()
